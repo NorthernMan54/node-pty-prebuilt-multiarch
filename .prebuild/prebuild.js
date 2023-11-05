@@ -40,6 +40,9 @@ try {
     stdio: ['inherit', 'inherit', 'inherit']
   });
   console.log('Prebuild Result ', result.status, result.signal, result.error);
+  if (result.status != 0) {
+    process.exit(1);
+  }
 } catch (e) {
   console.error(e);
   process.exit(1);
