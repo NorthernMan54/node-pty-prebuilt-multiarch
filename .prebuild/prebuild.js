@@ -42,5 +42,5 @@ try {
   console.log('Prebuild Result ', result.status, result.signal, result.error);
 } catch (e) {
   console.error(e);
-  process.exit(0);
+  process.exit(1);
 }
