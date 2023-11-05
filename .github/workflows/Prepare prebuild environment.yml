@@ -272,7 +272,7 @@ jobs:
     - name: macOS - Prebuild Binaries
       if: runner.os == 'macOS'
       run: |
-        python3 -m pip install packaging
+        python3 -m pip install packaging setuptools
         npm ci --ignore-scripts
         env JOBS=max node .prebuild/prebuild.js ${oldNodeBuildTargets} ${nodeBuildTargets} 
         env JOBS=max node .prebuild/electron.js ${electronBuildTargets}
