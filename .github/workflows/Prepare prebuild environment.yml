@@ -358,14 +358,14 @@ jobs:
         run: |
           fileCount=$(ls prebuilds/*/node-pty*tar.gz | wc -l)
           echo "Release Prebuild count ${fileCount}"
-          if [ "$fileCount" -ne ${ReleasePrebuildCount} }} ]; then echo "::error::Release Prebuild count ${fileCount}, expected ${ReleasePrebuildCount}"; exit 1; else echo "::notice::Release Prebuild count ${fileCount}, expected ${ReleasePrebuildCount}"; fi
+          if [ "$fileCount" -ne ${ReleasePrebuildCount} ]; then echo "::error::Release Prebuild count ${fileCount}, expected ${ReleasePrebuildCount}"; exit 1; else echo "::notice::Release Prebuild count ${fileCount}, expected ${ReleasePrebuildCount}"; fi
 
       - name: Check Release prebuildify`s exist
         shell: bash
         run: |
-          fileCount=$(ls prebuilds/*/node-pty*tar.gz | wc -l)
+          fileCount=$(ls prebuilds/*/node*node | wc -l)
           echo "Release Prebuild count ${fileCount}"
-          if [ "$fileCount" -ne ${ReleasePrebuildifyCount} }} ]; then echo "::error::Release Prebuildify count ${fileCount}, expected ${ReleasePrebuildifyCount}"; exit 1; else echo "::notice::Release Prebuildify count ${fileCount}, expected ${ReleasePrebuildifyCount}"; fi
+          if [ "$fileCount" -ne ${ReleasePrebuildifyCount} ]; then echo "::error::Release Prebuildify count ${fileCount}, expected ${ReleasePrebuildifyCount}"; exit 1; else echo "::notice::Release Prebuildify count ${fileCount}, expected ${ReleasePrebuildifyCount}"; fi
 
       - name: get-npm-version
         id: package-version
